@@ -5,7 +5,7 @@ import 'note_edit_screen.dart';
 
 /// Shows details for a single note, allows deleting and editing.
 class NoteDetailScreen extends StatefulWidget {
-  final int noteId;
+  final String noteId;
   const NoteDetailScreen({super.key, required this.noteId});
 
   @override

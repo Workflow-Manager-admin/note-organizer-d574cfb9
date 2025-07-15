@@ -1,6 +1,6 @@
 /// Representation of a single note fetched from or sent to Supabase.
 class Note {
-  final int id;
+  final String id;
   final String title;
   final String content;
   final DateTime createdAt;
@@ -16,7 +16,7 @@ class Note {
 
   // PUBLIC_INTERFACE
   factory Note.fromMap(Map<String, dynamic> map) => Note(
-        id: map['id'] as int,
+        id: map['id'].toString(),
         title: map['title'] as String,
         content: map['content'] as String,
         createdAt: DateTime.parse(map['created_at'] as String),
