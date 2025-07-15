@@ -3,16 +3,13 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:notes_frontend/main.dart';
 
 void main() {
-  testWidgets('App generation message displayed', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
+  testWidgets('Notes home screen displays', (WidgetTester tester) async {
+    await tester.pumpWidget(const NotesApp());
 
-    expect(find.text('notes_frontend App is being generated...'), findsOneWidget);
-    expect(find.byType(CircularProgressIndicator), findsOneWidget);
-  });
+    // Should find 'Notes' title on the app bar
+    expect(find.text('Notes'), findsOneWidget);
 
-  testWidgets('App bar has correct title', (WidgetTester tester) async {
-    await tester.pumpWidget(const MyApp());
-
-    expect(find.text('notes_frontend'), findsOneWidget);
+    // FAB should exist
+    expect(find.byType(FloatingActionButton), findsOneWidget);
   });
 }
